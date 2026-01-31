@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>وكالة عمر للسياحة والأسفار</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+<!-- ===== NAVBAR ===== -->
+<header class="bg-white shadow fixed w-full top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-extrabold text-green-700">وكالة عمر للسياحة والأسفار</h1>
+    <nav class="space-x-6 space-x-reverse">
+      <a href="#home">الرئيسية</a>
+      <a href="#umrah">العمرة</a>
+      <a href="#billet">التذاكر</a>
+      <a href="#booking">الحجز</a>
+    </nav>
+  </div>
+</header>
+
+<div class="h-24"></div>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="bg-cover bg-center py-28 text-center"
+  style="background-image:url('https://images.pexels.com/photos/443446/pexels-photo-443446.jpeg');">
+  <div class="bg-black bg-opacity-50 py-20">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+      رحلات عمرة منظمة باحتراف
+    </h2>
+    <p class="text-lg text-gray-200 mb-6">
+      ثقة • راحة • تنظيم عالي
+    </p>
+    <a href="#umrah" class="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700">
+      استعرض برامج العمرة
+    </a>
+  </div>
+</section>
+
+<!-- ===== UMRAH ===== -->
+<section id="umrah" class="py-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center text-green-800 mb-12">برامج العمرة</h3>
+
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- أسبوع شعبان + رمضان -->
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <img src="https://images.pexels.com/photos/1563351/pexels-photo-1563351.jpeg"
+             class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">
+            رحلة أسبوع شعبان + أسبوع رمضان – فندق ديوان أجياد
+          </h4>
+          <p class="text-gray-600 mb-4">يبعد 700 متر عن الحرم</p>
+          <ul class="list-disc pr-6 space-y-1">
+            <li>خماسية: 270,000 دج</li>
+            <li>رباعية: 288,000 دج</li>
+            <li>ثلاثية: 308,000 دج</li>
+            <li>ثنائية: 338,000 دج</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- شهر كامل ديوان أجياد -->
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <img src="https://images.pexels.com/photos/2611024/pexels-photo-2611024.jpeg"
+             class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">
+            رحلة شهر كامل – فندق ديوان أجياد
+          </h4>
+          <p class="text-gray-600 mb-4">يبعد 700 متر عن الحرم</p>
+          <ul class="list-disc pr-6 space-y-1">
+            <li>خماسية: 458,000 دج</li>
+            <li>رباعية: 488,000 دج</li>
+            <li>ثلاثية: 575,000 دج</li>
+            <li>ثنائية: 696,000 دج</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- شهر كامل رمضان منى كونكورد -->
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg"
+             class="w-full h-64 object-cover">
+        <div class="p-6">
+          <h4 class="text-2xl font-bold mb-2">
+            شهر كامل من رمضان – فندق منى كونكورد
+          </h4>
+          <p class="text-gray-600 mb-2">نقل 24 ساعة</p>
+          <ul class="list-disc pr-6 space-y-1">
+            <li>خماسية: 328,000 دج</li>
+            <li>رباعية: 355,000 دج</li>
+            <li>ثلاثية: 397,000 دج</li>
+            <li>ثنائية: 468,000 دج</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== BILLET ===== -->
+<section id="billet" class="py-16 bg-gray-50">
+  <h3 class="text-3xl font-bold text-center text-green-800 mb-10">قسم التذاكر</h3>
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 text-center">
+    <div class="border p-6 rounded-lg">تذاكر الحج – لاحقًا</div>
+    <div class="border p-6 rounded-lg">تذاكر العمرة – لاحقًا</div>
+  </div>
+</section>
+
+<!-- ===== BOOKING ===== -->
+<section id="booking" class="py-20">
+  <div class="max-w-3xl mx-auto bg-white shadow rounded-xl p-10">
+    <h3 class="text-3xl font-bold text-center text-green-800 mb-8">نموذج الحجز</h3>
+
+    <form id="bookingForm" class="space-y-5">
+      <input required placeholder="الاسم" class="w-full border p-3 rounded">
+      <input required placeholder="اللقب" class="w-full border p-3 rounded">
+      <input required placeholder="رقم الهاتف" class="w-full border p-3 rounded">
+
+      <select required class="w-full border p-3 rounded">
+        <option disabled selected>اختر الرحلة</option>
+        <option>أسبوع شعبان + رمضان</option>
+        <option>شهر كامل ديوان أجياد</option>
+        <option>شهر كامل رمضان منى كونكورد</option>
+      </select>
+
+      <select required class="w-full border p-3 rounded">
+        <option disabled selected>نوع الغرفة</option>
+        <option>خماسية</option>
+        <option>رباعية</option>
+        <option>ثلاثية</option>
+        <option>ثنائية</option>
+      </select>
+
+      <button class="bg-green-700 text-white w-full py-3 rounded">
+        تأكيد الحجز
+      </button>
+
+      <p id="success" class="hidden text-green-700 text-center font-bold mt-4">
+        ✅ تم الحجز بنجاح، سنتصل بك قريبًا
+      </p>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById("bookingForm").onsubmit = e => {
+    e.preventDefault();
+    document.getElementById("success").classList.remove("hidden");
+    e.target.reset();
+  };
+</script>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-green-700 text-white text-center py-6">
+  © 2026 وكالة عمر للسياحة والأسفار
+</footer>
+
+</body>
+      </html>
