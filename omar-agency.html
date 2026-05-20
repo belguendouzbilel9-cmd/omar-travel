@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>وكالة عمر للسياحة والأسفار</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #F0D080;
+  --gold-dark: #8B6914;
+  --deep: #07090F;
+  --deep2: #0F1420;
+  --card: #131A2B;
+  --card2: #1A2338;
+  --border: rgba(201,168,76,0.2);
+  --text: #EAE0CC;
+  --muted: #7A6A50;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Tajawal',sans-serif;
+  background:var(--deep);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 10%,rgba(201,168,76,0.08) 0%,transparent 55%),
+    radial-gradient(ellipse 60% 60% at 85% 85%,rgba(201,168,76,0.06) 0%,transparent 55%),
+    repeating-linear-gradient(45deg,transparent,transparent 50px,rgba(201,168,76,0.012) 50px,rgba(201,168,76,0.012) 51px);
+  pointer-events:none;z-index:0;
+}
+
+/* HEADER */
+header{
+  position:relative;z-index:1;
+  text-align:center;
+  padding:50px 24px 36px;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(201,168,76,0.06) 0%,transparent 100%);
+}
+.stars-row{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  margin-bottom:18px;
+}
+.star{color:var(--gold);font-size:18px;animation:twinkle 2s ease-in-out infinite;}
+.star:nth-child(2){animation-delay:.3s}
+.star:nth-child(3){animation-delay:.6s}
+.star:nth-child(4){animation-delay:.9s}
+.star:nth-child(5){animation-delay:1.2s}
+@keyframes twinkle{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+
+.logo-ring{
+  width:100px;height:100px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  box-shadow:0 0 30px rgba(201,168,76,0.3),inset 0 0 20px rgba(201,168,76,0.05);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  animation:ringpulse 3s ease-in-out infinite;
+}
+@keyframes ringpulse{0%,100%{box-shadow:0 0 30px rgba(201,168,76,0.3),inset 0 0 20px rgba(201,168,76,0.05)}50%{box-shadow:0 0 50px rgba(201,168,76,0.5),inset 0 0 30px rgba(201,168,76,0.1)}}
+.logo-ring::before{
+  content:'';position:absolute;inset:6px;
+  border-radius:50%;border:1px solid rgba(201,168,76,0.3);
+}
+.logo-icon{font-size:40px;filter:drop-shadow(0 0 8px rgba(201,168,76,0.6));}
+
+.agency-name{
+  font-family:'Amiri',serif;
+  font-size:clamp(26px,6vw,44px);
+  font-weight:700;
+  background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 50%,var(--gold-dark) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.3;margin-bottom:6px;
+  letter-spacing:1px;
+}
+.agency-tagline{
+  font-size:13px;color:var(--muted);letter-spacing:4px;font-weight:300;text-transform:uppercase;
+}
+.divider{
+  display:flex;align-items:center;gap:14px;
+  max-width:360px;margin:24px auto 0;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold));}
+.divider::before{background:linear-gradient(270deg,transparent,var(--gold));}
+.divider-gem{color:var(--gold);font-size:16px;}
+
+/* OFFER SECTION */
+.offer-section{
+  position:relative;z-index:1;
+  max-width:740px;margin:40px auto 0;padding:0 20px;
+}
+.offer-title{
+  text-align:center;
+  font-family:'Amiri',serif;
+  font-size:clamp(20px,4vw,30px);
+  color:var(--gold-light);
+  margin-bottom:28px;
+  position:relative;
+}
+.offer-title::after{
+  content:'';display:block;width:60px;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  margin:10px auto 0;
+}
+
+.offer-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  margin-bottom:40px;
+}
+@media(max-width:500px){.offer-cards{grid-template-columns:1fr;}}
+
+.offer-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:28px 20px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.offer-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(201,168,76,0.15);
+}
+.offer-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.offer-card-icon{font-size:34px;margin-bottom:12px;display:block;}
+.offer-card-label{
+  font-size:15px;color:var(--muted);margin-bottom:8px;font-weight:500;
+}
+.offer-card-price{
+  font-family:'Amiri',serif;
+  font-size:clamp(22px,5vw,32px);
+  font-weight:700;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.offer-card-currency{font-size:14px;color:var(--muted);margin-top:4px;}
+
+.offer-note{
+  text-align:center;
+  background:linear-gradient(135deg,rgba(201,168,76,0.08),rgba(201,168,76,0.03));
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px 20px;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:40px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.offer-note span{font-size:20px;}
+
+/* FORM */
+.form-container{
+  position:relative;z-index:1;
+  max-width:740px;margin:0 auto;padding:0 20px 60px;
+}
+.form-box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:36px 32px;
+  position:relative;
+  overflow:hidden;
+}
+@media(max-width:520px){.form-box{padding:24px 18px;}}
+.form-box::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent);
+}
+
+.form-title{
+  font-family:'Amiri',serif;
+  font-size:22px;
+  color:var(--gold-light);
+  margin-bottom:28px;
+  display:flex;align-items:center;gap:10px;
+}
+
+.form-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr;}}
+
+.form-group{display:flex;flex-direction:column;gap:7px;}
+.form-group.full{grid-column:1/-1;}
+
+label{
+  font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.5px;
+  display:flex;align-items:center;gap:6px;
+}
+label .lbl-icon{font-size:15px;}
+
+input[type=text],input[type=tel],input[type=email],select{
+  background:var(--deep2);
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;
+  padding:13px 16px;
+  color:var(--text);
+  font-family:'Tajawal',sans-serif;
+  font-size:15px;
+  width:100%;
+  transition:border-color .3s,box-shadow .3s;
+  outline:none;
+  appearance:none;
+}
+input[type=text]:focus,input[type=tel]:focus,input[type=email]:focus,select:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,0.12);
+}
+input::placeholder{color:var(--muted);}
+select{cursor:pointer;}
+select option{background:var(--deep2);}
+
+/* Gender radio */
+.gender-group{
+  display:flex;gap:12px;flex-wrap:wrap;
+}
+.gender-btn{
+  flex:1;min-width:120px;
+  background:var(--deep2);
+  border:1px solid rgba(201,168,76,0.2);
+  border-radius:10px;
+  padding:12px 16px;
+  cursor:pointer;
+  display:flex;align-items:center;gap:10px;
+  transition:all .25s;
+  color:var(--text);font-family:'Tajawal',sans-serif;font-size:15px;
+}
+.gender-btn input{display:none;}
+.gender-btn:hover{border-color:var(--gold);background:rgba(201,168,76,0.07);}
+.gender-btn.selected{
+  border-color:var(--gold);
+  background:rgba(201,168,76,0.12);
+  color:var(--gold-light);
+}
+.gender-dot{
+  width:18px;height:18px;border-radius:50%;
+  border:2px solid var(--muted);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:all .2s;
+}
+.gender-btn.selected .gender-dot{
+  border-color:var(--gold);
+  background:var(--gold);
+}
+.gender-btn.selected .gender-dot::after{
+  content:'';width:6px;height:6px;border-radius:50%;background:var(--deep);
+}
+
+/* File upload */
+.file-upload-area{
+  border:1.5px dashed rgba(201,168,76,0.3);
+  border-radius:12px;
+  padding:22px 16px;
+  text-align:center;
+  cursor:pointer;
+  transition:all .3s;
+  position:relative;
+  overflow:hidden;
+  background:var(--deep2);
+}
+.file-upload-area:hover{border-color:var(--gold);background:rgba(201,168,76,0.05);}
+.file-upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.file-upload-icon{font-size:28px;margin-bottom:8px;display:block;}
+.file-upload-text{font-size:13px;color:var(--muted);}
+.file-upload-text strong{color:var(--gold);display:block;font-size:14px;margin-bottom:3px;}
+.file-name{font-size:12px;color:var(--gold-light);margin-top:6px;display:none;}
+
+/* Submit */
+.submit-area{margin-top:28px;}
+.submit-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));
+  border:none;border-radius:12px;
+  padding:16px;
+  font-family:'Tajawal',sans-serif;
+  font-size:17px;font-weight:700;
+  color:var(--deep);
+  cursor:pointer;
+  letter-spacing:.5px;
+  transition:all .3s;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(201,168,76,0.35);
+}
+.submit-btn:active{transform:translateY(0);}
+.submit-btn::before{
+  content:'';position:absolute;top:-50%;left:-60%;
+  width:50%;height:200%;
+  background:rgba(255,255,255,0.15);
+  transform:skewX(-20deg);
+  animation:shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer{0%{left:-60%}100%{left:160%}}
+
+.callback-note{
+  text-align:center;
+  margin-top:18px;
+  font-size:13px;
+  color:var(--muted);
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.callback-note span{font-size:18px;}
+
+/* Success message */
+.success-msg{
+  display:none;
+  text-align:center;
+  padding:40px 20px;
+}
+.success-msg.show{display:block;}
+.success-icon{font-size:60px;margin-bottom:16px;animation:popIn .5s ease;}
+@keyframes popIn{0%{transform:scale(0)}70%{transform:scale(1.2)}100%{transform:scale(1)}}
+.success-title{
+  font-family:'Amiri',serif;font-size:24px;
+  color:var(--gold-light);margin-bottom:10px;
+}
+.success-sub{font-size:14px;color:var(--muted);}
+
+/* Footer */
+footer{
+  position:relative;z-index:1;
+  text-align:center;padding:20px;
+  border-top:1px solid var(--border);
+  color:var(--muted);font-size:12px;letter-spacing:1px;
+}
+
+/* Fade-in */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="stars-row">
+    <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+  </div>
+  <div class="logo-ring">
+    <span class="logo-icon">✈️</span>
+  </div>
+  <h1 class="agency-name">وكالة عمر للسياحة والأسفار</h1>
+  <p class="agency-tagline">Omar Tourism & Travel Agency</p>
+  <div class="divider"><span class="divider-gem">◆</span></div>
+</header>
+
+<!-- OFFER -->
+<section class="offer-section fade-in">
+  <h2 class="offer-title">🇶🇦 عرض إقامة قطر</h2>
+
+  <div class="offer-cards">
+    <div class="offer-card">
+      <span class="offer-card-icon">👨</span>
+      <div class="offer-card-label">الرجال</div>
+      <div class="offer-card-price">120,000</div>
+      <div class="offer-card-currency">دينار جزائري</div>
+    </div>
+    <div class="offer-card">
+      <span class="offer-card-icon">👩</span>
+      <div class="offer-card-label">النساء</div>
+      <div class="offer-card-price">155,000</div>
+      <div class="offer-card-currency">دينار جزائري</div>
+    </div>
+  </div>
+
+  <div class="offer-note">
+    <span>📞</span>
+    <span>بعد تسجيلك سنتصل بك لإتمام إجراءات الملف</span>
+  </div>
+</section>
+
+<!-- FORM -->
+<div class="form-container fade-in">
+  <div class="form-box" id="formBox">
+    <div class="form-title">
+      <span>📋</span> نموذج التسجيل
+    </div>
+
+    <div id="regForm">
+      <div class="form-grid">
+
+        <!-- اللقب -->
+        <div class="form-group">
+          <label><span class="lbl-icon">👤</span> اللقب</label>
+          <input type="text" id="lastName" placeholder="أدخل لقبك" />
+        </div>
+
+        <!-- الاسم -->
+        <div class="form-group">
+          <label><span class="lbl-icon">📝</span> الاسم</label>
+          <input type="text" id="firstName" placeholder="أدخل اسمك" />
+        </div>
+
+        <!-- رقم الهاتف -->
+        <div class="form-group full">
+          <label><span class="lbl-icon">📱</span> رقم الهاتف</label>
+          <input type="tel" id="phone" placeholder="05xxxxxxxx" />
+        </div>
+
+        <!-- الجنس -->
+        <div class="form-group full">
+          <label><span class="lbl-icon">⚧</span> الجنس</label>
+          <div class="gender-group">
+            <label class="gender-btn" id="btnMale" onclick="selectGender('male')">
+              <input type="radio" name="gender" value="male">
+              <span class="gender-dot"></span>
+              <span>👨 رجل — 120,000 دج</span>
+            </label>
+            <label class="gender-btn" id="btnFemale" onclick="selectGender('female')">
+              <input type="radio" name="gender" value="female">
+              <span class="gender-dot"></span>
+              <span>👩 امرأة — 155,000 دج</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- جواز السفر -->
+        <div class="form-group">
+          <label><span class="lbl-icon">🛂</span> جواز السفر</label>
+          <div class="file-upload-area" id="passportArea">
+            <input type="file" accept="image/*,.pdf" onchange="handleFile(this,'passportName')" />
+            <span class="file-upload-icon">📄</span>
+            <div class="file-upload-text">
+              <strong>رفع جواز السفر</strong>
+              صورة أو PDF
+            </div>
+            <div class="file-name" id="passportName"></div>
+          </div>
+        </div>
+
+        <!-- الصورة الشمسية -->
+        <div class="form-group">
+          <label><span class="lbl-icon">📸</span> الصورة الشمسية</label>
+          <div class="file-upload-area" id="photoArea">
+            <input type="file" accept="image/*" onchange="handleFile(this,'photoName')" />
+            <span class="file-upload-icon">🖼️</span>
+            <div class="file-upload-text">
+              <strong>رفع الصورة الشمسية</strong>
+              صورة شخصية واضحة
+            </div>
+            <div class="file-name" id="photoName"></div>
+          </div>
+        </div>
+
+      </div><!-- end grid -->
+
+      <div class="submit-area">
+        <button class="submit-btn" onclick="submitForm()">
+          <span>✈️</span> إرسال الطلب
+        </button>
+        <div class="callback-note">
+          <span>📞</span>
+          سنتصل بك قريباً لتأكيد تسجيلك
+        </div>
+      </div>
+    </div><!-- end regForm -->
+
+    <!-- Success -->
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">✅</div>
+      <div class="success-title">تم تسجيلك بنجاح!</div>
+      <div class="success-sub">
+        شكراً لتسجيلك في وكالة عمر للسياحة والأسفار<br>
+        سيتواصل معك فريقنا قريباً على رقم هاتفك
+      </div>
+      <div style="margin-top:24px;padding:16px;background:rgba(201,168,76,0.08);border-radius:12px;border:1px solid rgba(201,168,76,0.2);">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:8px;">ملخص طلبك</div>
+        <div id="summaryContent" style="font-size:15px;line-height:2;color:var(--text);"></div>
+      </div>
+    </div>
+
+  </div><!-- form-box -->
+</div><!-- form-container -->
+
+<footer>
+  © 2025 وكالة عمر للسياحة والأسفار — جميع الحقوق محفوظة
+</footer>
+
+<script>
+let selectedGender = '';
+
+function selectGender(g) {
+  selectedGender = g;
+  document.getElementById('btnMale').classList.toggle('selected', g === 'male');
+  document.getElementById('btnFemale').classList.toggle('selected', g === 'female');
+}
+
+function handleFile(input, nameId) {
+  const el = document.getElementById(nameId);
+  if (input.files && input.files[0]) {
+    el.textContent = '✓ ' + input.files[0].name;
+    el.style.display = 'block';
+    input.closest('.file-upload-area').style.borderColor = 'var(--gold)';
+    input.closest('.file-upload-area').style.background = 'rgba(201,168,76,0.06)';
+  }
+}
+
+function submitForm() {
+  const lastName  = document.getElementById('lastName').value.trim();
+  const firstName = document.getElementById('firstName').value.trim();
+  const phone     = document.getElementById('phone').value.trim();
+
+  if (!lastName || !firstName || !phone || !selectedGender) {
+    shake();
+    alert('⚠️ يرجى ملء جميع الحقول الإلزامية واختيار الجنس');
+    return;
+  }
+  if (!/^0[5-7]\d{8}$/.test(phone)) {
+    alert('⚠️ يرجى إدخال رقم هاتف جزائري صحيح');
+    return;
+  }
+
+  const price = selectedGender === 'male' ? '120,000 دج' : '155,000 دج';
+  const gLabel = selectedGender === 'male' ? '👨 رجل' : '👩 امرأة';
+
+  document.getElementById('summaryContent').innerHTML =
+    `<div>👤 الاسم الكامل: <strong>${lastName} ${firstName}</strong></div>
+     <div>📱 الهاتف: <strong>${phone}</strong></div>
+     <div>⚧ الجنس: <strong>${gLabel}</strong></div>
+     <div>💰 السعر: <strong style="color:var(--gold-light)">${price}</strong></div>`;
+
+  document.getElementById('regForm').style.display = 'none';
+  document.getElementById('successMsg').classList.add('show');
+  document.getElementById('formBox').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function shake() {
+  const box = document.getElementById('formBox');
+  box.style.animation = 'shake .4s ease';
+  setTimeout(()=>box.style.animation='', 400);
+}
+
+// Intersection Observer for fade-in
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+<style>
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+</style>
+</body>
+</html>
